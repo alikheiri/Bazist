@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروپوزال جامع و استراتژیک اینستاگرام بازیست</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #F7F4EE;
+            --bg-card: #FFFFFF;
+            --primary-forest: #14362E;
+            --secondary-teal: #235B54;
+            --accent-terracotta: #BE5A38;
+            --accent-gold: #C68B2C;
+            --text-dark: #192220;
+            --text-muted: #525E5B;
+            --border-soft: #E2DBD0;
+            --shadow-subtle: 0 10px 30px rgba(20, 54, 46, 0.05);
+            --shadow-hover: 0 16px 40px rgba(20, 54, 46, 0.1);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Modern Hero Banner */
+        .hero {
+            background: radial-gradient(circle at top left, #235B54, #14362E);
+            color: #FFFFFF;
+            padding: 64px 20px;
+            text-align: center;
+            border-bottom: 6px solid var(--accent-terracotta);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50px; right: -50px;
+            width: 250px; height: 250px;
+            background: rgba(198, 139, 44, 0.12);
+            border-radius: 50%;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(198, 139, 44, 0.22);
+            border: 1px solid var(--accent-gold);
+            color: #F6D084;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 span {
+            color: #F4B95F;
+        }
+
+        .hero p {
+            color: #D2E3DF;
+            font-size: 1.1rem;
+            max-width: 750px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .hero-pill {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #F4B95F;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Sections */
+        section {
+            padding: 56px 0;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .section-header {
+            margin-bottom: 28px;
+        }
+
+        .section-tag {
+            color: var(--accent-terracotta);
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .section-title {
+            font-size: 1.7rem;
+            font-weight: 900;
+            color: var(--primary-forest);
+        }
+
+        /* Grids & Cards */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 26px;
+            box-shadow: var(--shadow-subtle);
+            border: 1px solid var(--border-soft);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary-forest);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card p {
+            font-size: 0.94rem;
+            color: var(--text-muted);
+        }
+
+        .title-list {
+            list-style: none;
+        }
+
+        .title-list li {
+            padding: 8px 16px 8px 0;
+            position: relative;
+            font-size: 0.93rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            border-bottom: 1px dashed #EBE5DB;
+        }
+
+        .title-list li:last-child { border-bottom: none; }
+
+        .title-list li::before {
+            content: "•";
+            color: var(--accent-terracotta);
+            font-weight: 900;
+            font-size: 1.1rem;
+            position: absolute;
+            right: 0;
+        }
+
+        /* Spectrum Bar */
+        .spectrum-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .spec-item {
+            background: var(--bg-card);
+            border-top: 5px solid var(--secondary-teal);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .spec-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--primary-forest);
+            font-weight: 900;
+        }
+
+        .spec-item span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Elements Row */
+        .el-box {
+            border-radius: var(--radius-md);
+            padding: 20px;
+            color: #FFFFFF;
+            text-align: center;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .el-box h4 { font-size: 1.15rem; font-weight: 800; margin-bottom: 6px; }
+        .el-box span { font-size: 0.88rem; opacity: 0.95; }
+
+        .el-1 { background: linear-gradient(135deg, #235B54, #2E7D96); }
+        .el-2 { background: linear-gradient(135deg, #2E7D96, #5A938E); }
+        .el-3 { background: linear-gradient(135deg, #BE5A38, #D15B3E); }
+        .el-4 { background: linear-gradient(135deg, #7A5531, #9C7144); }
+
+        /* Pricing Cards */
+        .pricing-card {
+            background: var(--bg-card);
+            border-radius: 22px;
+            padding: 32px 26px;
+            border: 2px solid var(--border-soft);
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover { transform: translateY(-6px); }
+
+        .pricing-card.featured {
+            border-color: var(--accent-terracotta);
+            box-shadow: 0 16px 40px rgba(190, 90, 56, 0.15);
+            background: linear-gradient(180deg, #FFFFFF 0%, #FFFCFB 100%);
+        }
+
+        .badge-top {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-terracotta);
+            color: #FFF;
+            padding: 5px 18px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .pkg-title {
+            font-size: 1.45rem;
+            font-weight: 900;
+            color: var(--primary-forest);
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .pkg-price-box {
+            background: #EFE9DE;
+            border-radius: var(--radius-md);
+            padding: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card.featured .pkg-price-box {
+            background: var(--primary-forest);
+            color: #FFF;
+        }
+
+        .pkg-price-box .num {
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: var(--primary-forest);
+            display: block;
+            line-height: 1.1;
+        }
+
+        .pricing-card.featured .pkg-price-box .num { color: #F4B95F; }
+
+        .pkg-price-box .lbl {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .pricing-card.featured .pkg-price-box .lbl { color: #D2E3DF; }
+
+        .pkg-counts {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .count-box {
+            flex: 1;
+            background: #F7F4EE;
+            border: 1px solid var(--border-soft);
+            border-radius: 10px;
+            padding: 10px 4px;
+        }
+
+        .count-box b {
+            display: block;
+            color: var(--accent-terracotta);
+            font-size: 1.1rem;
+            font-weight: 900;
+        }
+
+        .count-box small {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .notice-banner {
+            margin-top: 28px;
+            background: #FFF5F2;
+            border: 2px dashed var(--accent-terracotta);
+            border-radius: var(--radius-md);
+            padding: 18px 22px;
+            text-align: center;
+            font-weight: 700;
+            color: #9E3B20;
+            font-size: 0.98rem;
+        }
+
+        .separate-badge {
+            display: inline-block;
+            background: #FEF3DF;
+            color: #8C5E14;
+            border: 1px solid #E6C88A;
+            font-size: 0.78rem;
+            font-weight: 800;
+            padding: 3px 12px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+
+        /* SCHEMATIC INFOGRAPHIC (NO TEXT, PURE GRAPHICS) */
+        .infographic-container {
+            background: linear-gradient(135deg, #14362E 0%, #1E4D43 100%);
+            border-radius: var(--radius-lg);
+            padding: 40px 30px;
+            color: #FFFFFF;
+            box-shadow: var(--shadow-hover);
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-nodes-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .info-node {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 24px 20px;
+            text-align: center;
+            flex: 1;
+            min-width: 220px;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s ease;
+        }
+
+        .info-node:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--accent-gold);
+        }
+
+        .info-node-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .info-node-graphic {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
+            margin-top: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-node-graphic::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; bottom: 0;
+            width: 75%;
+            background: linear-gradient(90deg, var(--accent-gold), #F4B95F);
+            border-radius: 4px;
+        }
+
+        .info-arrow {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            font-weight: 900;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .info-arrow { display: none; }
+        }
+
+        footer {
+            background: var(--primary-forest);
+            color: #D2E3DF;
+            text-align: center;
+            padding: 32px 20px;
+            font-size: 0.92rem;
+            border-top: 4px solid var(--secondary-teal);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container">
+            <span class="hero-badge">پروپوزال استراتژیک و معماری دیجیتال</span>
+            <h1>استراتژی اینستاگرام و رشد <span>«بازیست»</span></h1>
+            <p>زندگی بازیست؛ بازی روش تجربه کردن زندگی است و «آن» لحظه‌ای است که تجربه برای کودک زنده و معنادار می‌شود.</p>
+            <div class="hero-pills">
+                <span class="hero-pill">طیف تجربه (T1-T5)</span>
+                <span class="hero-pill">هویت بصری و گرافیک</span>
+                <span class="hero-pill">کمپین و تیزرسازی</span>
+                <span class="hero-pill">بازی‌سازی و هوش مصنوعی</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. CORE CONCEPTS -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">بخش اول • خلاصه سند مادر</span>
+                <h2 class="section-title">جهان‌بینی و مفاهیم کلیدی بازیست</h2>
+            </div>
+
+            <div class="grid-4" style="margin-bottom: 24px;">
+                <div class="card">
+                    <h3>✨ چیستی «آن»</h3>
+                    <p>لحظه‌ای که یک حس یا کشف برای کودک زنده می‌شود. ما بستر را طراحی می‌کنیم، نه خودِ «آن» را.</p>
+                </div>
+                <div class="card">
+                    <h3>🦪 صدف و گوهر</h3>
+                    <p>هر کودک به عمق متفاوتی از تجربه می‌رود؛ هدف ایجاد امکان تجربه است، نه تحمیل نتیجه یکسان.</p>
+                </div>
+                <div class="card">
+                    <h3>🧺 سبد تجربه</h3>
+                    <p>افزودن حس، تصویر و سؤال به سبد کودک و تقویت ظرفیت «آن‌شناسی» بدون تبدیل به KPI شمارشی.</p>
+                </div>
+                <div class="card">
+                    <h3>🪶 تار و پود و سیمرغ</h3>
+                    <p>تجربه‌ها در زندگی کودک تنیده شده و «بافت» او را می‌سازند؛ هر کودک یک پَر از سیمرغِ جهان انسانی است.</p>
+                </div>
+            </div>
+
+            <div class="spectrum-bar">
+                <div class="spec-item"><strong>T1 • تماس</strong><span>مواجهه حسی اولیه</span></div>
+                <div class="spec-item"><strong>T2 • دریافت</strong><span>توجه و سؤال</span></div>
+                <div class="spec-item"><strong>T3 • درگیری</strong><span>بازی و آزمون</span></div>
+                <div class="spec-item"><strong>T4 • معنا</strong><span>برداشت شخصی</span></div>
+                <div class="spec-item"><strong>T5 • بافت شدن</strong><span>تنیده در زندگی</span></div>
+                <div class="spec-item" style="border-top-color: var(--accent-terracotta); background:#FFF9F6;">
+                    <strong style="color:var(--accent-terracotta);">حلقه امتداد</strong>
+                    <span>بازگشت اثر در خانه</span>
+                </div>
+            </div>
+
+            <div class="grid-4">
+                <div class="el-box el-1"><h4>💧 آب</h4><span>دریافت و شناخت</span></div>
+                <div class="el-box el-2"><h4>🌬️ باد</h4><span>خیال و خلاقیت</span></div>
+                <div class="el-box el-3"><h4>🔥 آتش</h4><span>عمل و ساختن</span></div>
+                <div class="el-box el-4"><h4>🌱 خاک</h4><span>روایت و تثبیت</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. STRATEGY & ROADMAP -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">بخش دوم • استراتژی و نقشه راه</span>
+                <h2 class="section-title">ستون‌های محتوایی و رودمپ ۳ ماهه</h2>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 24px;">
+                <div class="card">
+                    <h3>۴ ستون اصلی محتوای پیج</h3>
+                    <ul class="title-list">
+                        <li>شکار لحظه‌های «آن» (مواجهه حسی و مکث کودک)</li>
+                        <li>چهار اقلیم تجربه (ابعاد ملموس و ناملموس فعالیت‌ها)</li>
+                        <li>معماری بازیست و تسهیلگری (مشاهده‌گری و عدالت تجربه)</li>
+                        <li>دفترچه «امتداد» (مشارکت والدین و بازتاب در خانه)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>۴ حوزه فعالیت‌های عملی</h3>
+                    <ul class="title-list">
+                        <li>حوزه خود (بدن، احساس، انتخاب و هویت فردی)</li>
+                        <li>حوزه دیگری و اجتماع (خانواده، گروه و گفت‌وگو)</li>
+                        <li>حوزه طبیعت و محیط (آب، خاک، گیاهان و جانوران)</li>
+                        <li>حوزه فرهنگ و جهان انسانی (سفال، گلاب‌گیری و آیین‌ها)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid-3">
+                <div class="card" style="border-top: 4px solid var(--primary-forest);">
+                    <h3>ماه اول: بسترچینی و حس‌آمیزی</h3>
+                    <ul class="title-list">
+                        <li>بازطراحی ویترین پیج و هایلایت‌ها</li>
+                        <li>انتشار ویدیوی مانیفست «زندگی بازیست»</li>
+                        <li>تمرکز بر نمایش تجربه ملموس کودکان</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-top: 4px solid var(--secondary-teal);">
+                    <h3>ماه دوم: تعمیق و مشارکت خانواده</h3>
+                    <ul class="title-list">
+                        <li>معرفی طیف تجربه و عدالت تجربه</li>
+                        <li>راه‌اندازی چالش «ردپای امتداد در خانه»</li>
+                        <li>نمایش پشت‌صحنه طراحی بستر</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-top: 4px solid var(--accent-terracotta);">
+                    <h3>ماه سوم: رویدادها و جامعه سیمرغ</h3>
+                    <ul class="title-list">
+                        <li>محتوای ویژه رویدادهای فصلی و آیینی</li>
+                        <li>اجرای پروژه «تار و پود» و «پرهای سیمرغ»</li>
+                        <li>جذب مخاطب با گزارش‌های امتداد والدین</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MONTHLY CONTENT STRUCTURE -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">بخش سوم • تقویم محتوایی</span>
+                <h2 class="section-title">ساختار محتوای ماهانه (۱۰ ریلز + ۵ اسلایدی + ۳۰ استوری)</h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <h3>🎬 تایتل ۱۰ ریلز ماهانه</h3>
+                    <ul class="title-list">
+                        <li>مانیفست «زندگی بازیست»</li>
+                        <li>شکار لحظه «آن» (کشف و مکث)</li>
+                        <li>تجربه ملموس و ناملموس سفال</li>
+                        <li>مسیر نفوذ تجربه (T1 تا T3)</li>
+                        <li>روایت «امتداد» در خانه</li>
+                        <li>چهار کیفیت آب، باد، آتش و خاک</li>
+                        <li>هنر مکث و مداخله به‌موقع</li>
+                        <li>صدف و گوهر (عدالت تجربه)</li>
+                        <li>مواجهه حسی با طبیعت</li>
+                        <li>تار و پود و سیمرغ</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>📑 تایتل ۵ پست اسلایدی</h3>
+                    <ul class="title-list">
+                        <li>نقد نگاه کمی به کودک (چرا KPI نیست؟)</li>
+                        <li>اصل عدالت تجربه در کارگاه‌ها</li>
+                        <li>سبد تجربه و تقویت آن‌شناسی</li>
+                        <li>راهنمای رصد امتداد در خانه</li>
+                        <li>پیوند چهار میدان زندگی</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>📱 چرخه ۳۰ روز استوری</h3>
+                    <ul class="title-list">
+                        <li>پشت‌صحنه آماده‌سازی متریال</li>
+                        <li>گزارش‌های زنده مواجهه حسی</li>
+                        <li>باکس‌های تعاملی دفترچه امتداد</li>
+                        <li>کوییزهای تربیتی و پاسخ تیم</li>
+                        <li>معرفی دوره‌ها و لینک ثبت‌نام</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PACKAGES (WITH GRAPHICS INTEGRATED & LOCKED 1, 2, 3 DAYS SHOOTING) -->
+    <section style="background: #EFEADF;">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <span class="section-tag">بخش چهارم • تعرفه مدیریت و تولید محتوا</span>
+                <h2 class="section-title">پکیج‌های ماهانه اینستاگرام (همراه با خدمات گرافیکی)</h2>
+            </div>
+
+            <div class="grid-3">
+
+                <!-- 50M Package -->
+                <div class="pricing-card">
+                    <div>
+                        <h3 class="pkg-title">پکیج «بستر و دریافت»</h3>
+                        <div class="pkg-price-box">
+                            <span class="num">۵۰,۰۰۰,۰۰۰</span>
+                            <span class="lbl">تومان / ماهانه</span>
+                        </div>
+                        <div class="pkg-counts">
+                            <div class="count-box"><b>۸</b><small>ریلز</small></div>
+                            <div class="count-box"><b>۴</b><small>اسلایدی</small></div>
+                            <div class="count-box"><b>۲۰ روز</b><small>استوری</small></div>
+                        </div>
+                        <ul class="title-list">
+                            <li><strong>تصویربرداری: ۱ روز در ماه</strong></li>
+                            <li>تدوین تقویم محتوایی ماهانه</li>
+                            <li>تدوین ویدیوها، اصلاح رنگ و صدا</li>
+                            <li><strong>گرافیک: هویت بصری پایه، کاورها و ۴ پست اسلایدی</strong></li>
+                            <li>کپشن‌نویسی بر اساس مفاهیم بازیست</li>
+                            <li>بارگذاری پست‌ها و اجرای ۲۰ روز استوری</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 60M Package -->
+                <div class="pricing-card featured">
+                    <span class="badge-top">پیشنهاد اصلی پروپوزال</span>
+                    <div>
+                        <h3 class="pkg-title">پکیج «درگیری و معنا»</h3>
+                        <div class="pkg-price-box">
+                            <span class="num">۶۰,۰۰۰,۰۰۰</span>
+                            <span class="lbl">تومان / ماهانه</span>
+                        </div>
+                        <div class="pkg-counts">
+                            <div class="count-box"><b>۱۰</b><small>ریلز</small></div>
+                            <div class="count-box"><b>۵</b><small>اسلایدی</small></div>
+                            <div class="count-box"><b>۳۰ روز</b><small>استوری</small></div>
+                        </div>
+                        <ul class="title-list">
+                            <li><strong>تصویربرداری: ۲ روز در ماه</strong></li>
+                            <li>سناریونویسی و استراتژی اختصاصی</li>
+                            <li>صدابرداری محیطی از واکنش کودکان</li>
+                            <li><strong>گرافیک: طراحی پوسترهای کارگاه، بنر و ۵ اسلایدی عمیق</strong></li>
+                            <li>اجرای کمپین تعاملی «دفترچه امتداد»</li>
+                            <li>مدیریت ۳۰ روز استوری و گزارش ماهانه</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 70M Package -->
+                <div class="pricing-card">
+                    <div>
+                        <h3 class="pkg-title">پکیج «بافت و سیمرغ»</h3>
+                        <div class="pkg-price-box">
+                            <span class="num">۷۰,۰۰۰,۰۰۰</span>
+                            <span class="lbl">تومان / ماهانه</span>
+                        </div>
+                        <div class="pkg-counts">
+                            <div class="count-box"><b>۱۲</b><small>ریلز</small></div>
+                            <div class="count-box"><b>۶</b><small>اسلایدی</small></div>
+                            <div class="count-box"><b>۳۰ روز</b><small>استوری کامل</small></div>
+                        </div>
+                        <ul class="title-list">
+                            <li><strong>تصویربرداری: ۳ روز در ماه</strong></li>
+                            <li>۱۲ ریلز تخصصی کارگاه و رویداد</li>
+                            <li>عکاسی مستند و پرتره کودکان</li>
+                            <li><strong>گرافیک: هویت بصری کامل، اقلام چاپی کارگاه و ۶ اسلایدی</strong></li>
+                            <li>مدیریت کامل پیج و ۳۰ روز استوری تعاملی</li>
+                            <li>پاسخگویی دایرکت و هدایت به ثبت‌نام</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="notice-banner">
+                💡 نکته مالی: هزینه تبلیغات (اکسپلور و اینفلوئنسرها) و اجرای کمپین‌های بزرگ تبلیغاتی، به صورت مجزا محاسبه می‌شود.
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SEPARATE SERVICES (CAMPAIGNS & AI/GAMIFICATION) -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">بخش پنجم • خدمات تخصصی و نوآوری (تعرفه مجزا)</span>
+                <h2 class="section-title">کمپین‌های تبلیغاتی، بازی‌سازی و هوش مصنوعی</h2>
+            </div>
+
+            <div class="grid-2">
+                <div class="card" style="border-top: 4px solid var(--accent-terracotta);">
+                    <span class="separate-badge" style="background:#FCECE8; color:#A83820; border-color:#F3C2B6;">هزینه تولید و بودجه تبلیغات مجزا</span>
+                    <h3>🚀 طراحی کمپین، تیزرسازی و تبلیغات</h3>
+                    <ul class="title-list">
+                        <li>ایده‌پردازی و استراتژی کمپین‌های جذب و فروش دوره‌ها</li>
+                        <li>سناریونویسی و ساخت تیزرهای تبلیغاتی ویژه معرفی بازیست</li>
+                        <li>تدوین مدیاپلن و انتخاب پیج‌ها و کانال‌های هدف والدین</li>
+                        <li>مدیریت اجرایی تبلیغات و بهینه‌سازی نرخ تبدیل</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="border-top: 4px solid var(--secondary-teal);">
+                    <span class="separate-badge" style="background:#E7F0EE; color:#1B3B32; border-color:#B8D4CE;">بخش نوآوری و تعامل خلاق</span>
+                    <h3>🧩 بازی‌سازی، معماسازی و هوش مصنوعی</h3>
+                    <ul class="title-list">
+                        <li>طراحی بازی‌های تعاملی (Gamification) در استوری</li>
+                        <li>معماسازی و طراحی چالش‌های فکری-داستانی برای خانواده</li>
+                        <li>سناریوهای معمایی جهت ایجاد امتداد تجربه در خانه</li>
+                        <li>تولید تصاویر و ویدیوهای مفهومی با هوش مصنوعی (AI)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PURE SCHEMATIC INFOGRAPHIC (NO TEXT) -->
+    <section style="border-bottom: none;">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <span class="section-tag">بخش ششم • خروجی شماتیک</span>
+                <h2 class="section-title" style="text-align: center;">چشم‌انداز بصری و نتایج پس از ۳ ماه همکاری</h2>
+            </div>
+
+            <div class="infographic-container">
+                <div class="info-nodes-flow">
+                    <div class="info-node">
+                        <span class="info-node-icon">🌱</span>
+                        <div class="info-node-graphic"></div>
+                    </div>
+                    <div class="info-arrow">➔</div>
+                    <div class="info-node">
+                        <span class="info-node-icon">⚡</span>
+                        <div class="info-node-graphic"></div>
+                    </div>
+                    <div class="info-arrow">➔</div>
+                    <div class="info-node">
+                        <span class="info-node-icon">🎯</span>
+                        <div class="info-node-graphic"></div>
+                    </div>
+                    <div class="info-arrow">➔</div>
+                    <div class="info-node" style="border-color: #F4B95F; background: rgba(244, 185, 95, 0.15);">
+                        <span class="info-node-icon">🔥</span>
+                        <div class="info-node-graphic" style="background: rgba(244, 185, 95, 0.3);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>طراحی و تدوین بر اساس <strong>«سند مادر آن در بازیست»</strong> • زندگی بازیست</p>
+        </div>
+    </footer>
+
+</body>
+</html>
